@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "nombre": "Laptops",
+    "descripcion": "Computadoras portátiles de alta gama para trabajo, gaming y creatividad"
+  },
+  {
+    "id": "2",
+    "nombre": "Celulares",
+    "descripcion": "Smartphones de última generación con las mejores cámaras y tecnología"
+  },
+  {
+    "id": "3",
+    "nombre": "Audio",
+    "descripcion": "Auriculares, altavoces y equipos de sonido de alta fidelidad"
+  },
+  {
+    "id": "4",
+    "nombre": "Periféricos",
+    "descripcion": "Teclados, ratones, monitores y accesorios para tu setup"
+  },
+  {
+    "id": "5",
+    "nombre": "Accesorios",
+    "descripcion": "Smartwatches, cargadores y complementos tecnológicos"
+  },
+  {
+    "id": "6",
+    "nombre": "Componentes",
+    "descripcion": "Tarjetas gráficas, procesadores y componentes de PC"
+  }
+]
