@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "imagen": "/assets/empleados/image-juan.jpg",
+    "nombre": "Juan Pérez",
+    "cargo": "Frontend Developer"
+  },
+  {
+    "id": 2,
+    "imagen": "/assets/empleados/image-maria.jpg",
+    "nombre": "María Gómez",
+    "cargo": "Backend Developer"
+  },
+  {
+    "id": 3,
+      "imagen": "/assets/empleados/image-lucas.jpg",
+    "nombre": "Lucas Fernández",
+    "cargo": "UI/UX Designer"
+  }
+]
