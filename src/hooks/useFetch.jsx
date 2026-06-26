@@ -15,6 +15,7 @@ const useFetch = (endpoint) => {
         if (!respuesta.ok) {
           throw new Error(`Error al cargar los datos: ${respuesta.status}`);
         }
+        
         const datos = await respuesta.json();
         
         // Simulo delay de 2 segundos en la carga de los datos

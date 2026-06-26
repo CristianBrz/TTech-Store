@@ -12,7 +12,7 @@ const Hero = () => {
         <p className="mb-8 max-w-2xl text-lg md:text-xl">
           Descubre la mejor tecnología al mejor precio. Laptops, smartphones, accesorios y mucho más.
         </p>
-        <Link to="/productos" className="rounded-lg bg-orange-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-orange-700">
+        <Link to="/productos" className="rounded-lg bg-orange-600 px-8 py-3 font-semibold text-white hover:scale-105 hover:shadow-orange-500/80 hover:shadow-xl/30 transition-all duration-400 ease-in-out">
           Ver Productos
         </Link>
       </div>

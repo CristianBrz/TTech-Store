@@ -14,8 +14,7 @@ const Nav = () => {
       <ul className="flex justify-between gap-4">
         {paginas.map((item) => (
           <NavItem key={item.name} item={item} />
-        ))}
-      </ul>
+        ))}     </ul>
     </nav>
   );
 };
