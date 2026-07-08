@@ -18,7 +18,7 @@ const Productos = () => {
 
   if (error) {
     return (
-      <section className="flex items-center justify-center min-h-screen">
+      <section className="flex items-center justify-center min-h-screen w-full">
         <div className="bg-red-50 border border-red-200 text-red-700 px-6 py-4 rounded-lg">
           <p className="font-semibold">Error: {error.message}</p>
         </div>
@@ -30,7 +30,7 @@ const Productos = () => {
     <section className="bg-gray-50 py-8 px-4 min-h-screen rounded-xl">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center capitalize">
-          todos nuestros producto
+          todos nuestros productos
         </h1>
 
         {/* TODO: Agregar barr a de busqueda */}

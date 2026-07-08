@@ -1,8 +1,8 @@
 
 const TarjetaEmpleado = ({ imagen, nombre, cargo }) => {
-  console.log(imagen)
-  console.log(nombre)
-  console.log(cargo)
+  // console.log(imagen)
+  // console.log(nombre)
+  // console.log(cargo)
 
   return (
 

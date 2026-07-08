@@ -3,6 +3,7 @@ import Layout from "./components/layouts/Layout";
 import Productos from "./components/pages/Productos";
 import DetalleProducto from "./components/pages/DetalleProducto";
 import Home from "./components/pages/Home";
+import Carrito from "./components/pages/Carrito";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
           <Route
             path="/carrito"
             element={
-              <h1 className="h-dvh bg-orange-800 text-zinc-300">Carrito</h1>
+              <Carrito />
             }
           />
           <Route
