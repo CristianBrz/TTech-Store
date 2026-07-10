@@ -1,6 +1,6 @@
-import Hero from './../Hero';
-import ProductosDestacados from './../ProductosDestacados';
-import Categorias from './../Categorias';
+import Hero from '../components/Hero';
+import ProductosDestacados from '../components/ProductosDestacados';
+import Categorias from '../components/Categorias';
 const Home = () => {
   return (
     <section className="bg-gray-50 min-h-screen">

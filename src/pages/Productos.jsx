@@ -1,7 +1,7 @@
-import Producto from "../TarjetaProducto";
-import useFetch from "../../hooks/useFetch";
+import Producto from "../components/TarjetaProducto";
+import useFetch from "../hooks/useFetch";
 
-import Spinner from '../Spinner';
+import Spinner from '../components/Spinner';
 
 const Productos = () => {
   const endpointProductos = '/data/productos.json'

@@ -1,4 +1,4 @@
-import Empleados from "../Empleados";
+import Empleados from "../components/Empleados";
 
 const Footer = () => {
   return (

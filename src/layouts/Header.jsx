@@ -1,5 +1,5 @@
-import Brand from "../Brand";
-import Nav from "../Nav";
+import Brand from "../components/Brand";
+import Nav from "../components/Nav";
 
 const Header = () => {
   return (

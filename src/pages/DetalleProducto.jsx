@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
 
-import Spinner from './../Spinner';
-import DetalleItem from './../DetalleItem';
-import useFetch from "../../hooks/useFetch";
+import Spinner from '../components/Spinner';
+import DetalleItem from '../components/DetalleItem';
+import useFetch from "../hooks/useFetch";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
