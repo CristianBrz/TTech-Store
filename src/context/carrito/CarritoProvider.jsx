@@ -1,25 +1,13 @@
-import { useState, useContext, createContext } from "react";
-// import { CarritoContext } from "./CarritoContext";
-
-export const CarritoContext = createContext();
-
-export const useCarrito = () => {
-  const context = useContext(CarritoContext);
-
-  if (!context) {
-    throw new Error("useCarrito debe ser usado dentro de un CarritoProvider");
-  }
-
-  return context;
-};
+import { useState } from "react";
+import { CarritoContext } from "./carritoContext";
 
 export const CarritoProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
 
   const agregarAlCarrito = (producto, cantidad) => {
-    const intemsCarrito = carrito.find((item) => item.id === producto.id);
+    const itemCarrito = carrito.find((item) => item.id === producto.id);
 
-    if (intemsCarrito) {
+    if (itemCarrito) {
       const carritoActualizado = carrito.map((item) =>
         item.id === producto.id
           ? { ...item, cantidad: item.cantidad + cantidad }
@@ -28,15 +16,17 @@ export const CarritoProvider = ({ children }) => {
 
       setCarrito(carritoActualizado);
     } else {
-      setCarrito((carritoPrevio) => [...carritoPrevio, { ...producto, cantidad }]);
+      setCarrito((carritoPrevio) => [
+        ...carritoPrevio,
+        { ...producto, cantidad },
+      ]);
     }
   };
 
   const limpiarCarrito = () => setCarrito([]);
 
   const eliminarDelCarrito = (id) => {
-    const carritoActualizado = carrito.filter((item) => item.id !== id);
-    setCarrito(carritoActualizado);
+    setCarrito(carrito.filter((item) => item.id !== id));
   };
 
   const actualizarCantidad = (id, nuevaCantidad) => {
@@ -44,10 +34,12 @@ export const CarritoProvider = ({ children }) => {
       eliminarDelCarrito(id);
       return;
     }
-    const carritoActualizado = carrito.map((item) =>
-      item.id === id ? { ...item, cantidad: nuevaCantidad } : item
+
+    setCarrito(
+      carrito.map((item) =>
+        item.id === id ? { ...item, cantidad: nuevaCantidad } : item,
+      ),
     );
-    setCarrito(carritoActualizado);
   };
 
   const getCantidadCarrito = () =>

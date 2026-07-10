@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-import { useCarrito } from "../context/carrito/CarritoProvider";
+import { useCarrito } from "../hooks/useCarrito";
 
 const Producto = ({
   id,
