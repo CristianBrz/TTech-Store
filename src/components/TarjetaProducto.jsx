@@ -27,11 +27,10 @@ const Producto = ({
   const { agregarAlCarrito } = useCarrito();
 
   const handleAgregarAlCarrito = () => {
-    agregarAlCarrito(datosProducto, 1);
-    alert(`Agregaste 1 unidad de ${nombre} al carrito.`);
+    const cantidadInicial = 1; // solo se puede agregar una unidad por vez desde el boton "Agregar al carrito"
+    agregarAlCarrito(datosProducto, cantidadInicial);
+    alert(`Agregaste ${nombre} al carrito.`);
   };
-
-
 
   return (
     <article className="capitalize bg-white rounded-xl flex flex-col shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100">
