@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom"
 
 import Spinner from '../components/Spinner';
 import DetalleItem from '../components/DetalleItem';
-import useFetch from "../hooks/useFetch";
+// import useFetch from "../hooks/useFetch";
+import useDocument from "../hooks/useDocument";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -10,12 +11,15 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 const DetalleProducto = () => {
   const { id } = useParams()
 
-  const endpointProductos = "/data/productos.json";
+  // const endpointProductos = "/data/productos.json";
 
-  const { items: productos, cargando, error } = useFetch(endpointProductos);
-
+  // const { items: productos, cargando, error } = useFetch(endpointProductos);
+  // const producto = productos?.find(p => p.id === parseInt(id)) 
   
-  const producto = productos?.find(p => p.id === parseInt(id))
+  const colleccion = "productos";
+  
+  const { item: producto, cargando, error } = useDocument(colleccion, id);
+  
 
   if (cargando) {
     return (
