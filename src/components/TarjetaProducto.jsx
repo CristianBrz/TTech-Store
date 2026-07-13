@@ -20,7 +20,6 @@ const Producto = ({
     precio,
     imagen,
     categoria,
-    descripcionCorta,
     stock,
   }
 
