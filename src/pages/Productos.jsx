@@ -1,19 +1,22 @@
 import Producto from "../components/TarjetaProducto";
-import useFetch from "../hooks/useFetch";
+// import useFetch from "../hooks/useFetch";
+import useColecciones from "../hooks/useColecciones";
 
-import Spinner from '../components/Spinner';
+import Spinner from "../components/Spinner";
 
 const Productos = () => {
+  /*
   const endpointProductos = '/data/productos.json'
-
   const { items: productos, cargando, error } = useFetch(endpointProductos);
+  */
 
-  // console.log(productos);
+  const coleccion = "productos";
+  const { items: productos, cargando, error } = useColecciones(coleccion);
+
+  console.table(productos);
 
   if (cargando) {
-    return (
-      <Spinner mensaje="Cargando productos, por favor espere..." />
-    );
+    return <Spinner mensaje="Cargando productos, por favor espere..." />;
   }
 
   if (error) {
