@@ -3,18 +3,29 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
-function Contador() {
-  const [contador, setContador] = useState(1);
+function Contador({ cantidadInicial = 1, onCantidadChange, stock }) {
+  const [contador, setContador] = useState(cantidadInicial);
 
   const incrementarContador = () => {
-    setContador(contador + 1)
+    if (stock && contador >= stock) {
+      return;
+    }
+    const nuevoContador = contador + 1;
+    setContador(nuevoContador);
+    if (onCantidadChange) {
+      onCantidadChange(nuevoContador);
+    }
   }
 
   const decrementarContador = () => {
     if (contador <= 1) {
       return;
     }
-    setContador(contador - 1)
+    const nuevoContador = contador - 1;
+    setContador(nuevoContador);
+    if (onCantidadChange) {
+      onCantidadChange(nuevoContador);
+    }
   }
 
   return (

@@ -48,6 +48,15 @@ export const CarritoProvider = ({ children }) => {
   const getTotalCarrito = () =>
     carrito.reduce((acum, item) => acum + item.precio * item.cantidad, 0);
 
+  const getCantidadActual = (productId) => {
+    const item = carrito.find((item) => item.id === productId);
+    return item ? item.cantidad : 0;
+  };
+
+  const isInCart = (productId) => {
+    return carrito.some((item) => item.id === productId);
+  };
+
   return (
     <CarritoContext.Provider
       value={{
@@ -58,6 +67,8 @@ export const CarritoProvider = ({ children }) => {
         actualizarCantidad,
         getCantidadCarrito,
         getTotalCarrito,
+        getCantidadActual,
+        isInCart,
       }}
     >
       {children}

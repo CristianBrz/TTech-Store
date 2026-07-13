@@ -1,7 +1,21 @@
-import Contador from "./Contador"
+import { useCarrito } from "../hooks/useCarrito"
 
 
 const DetalleItem = ({ producto }) => {
+  const { agregarAlCarrito, getCantidadActual } = useCarrito()
+
+  const cantidadActual = getCantidadActual(producto?.id)
+
+  const handleAgregarAlCarrito = () => {
+    if (producto) {
+      agregarAlCarrito(producto, 1)
+      alert(`Agregaste 1 unidad de ${producto.nombre} al carrito.`)
+    }
+  }
+
+  if (!producto) {
+    return null
+  }
   return (
 
     <section className="bg-white rounded-2xl shadow-lg my-8">
@@ -25,12 +39,18 @@ const DetalleItem = ({ producto }) => {
 
           <p className="text-2xl font-bold text-orange-600 mb-4">${producto.precio}</p>
 
-          <div className="flex items-center gap-4">
-            <Contador />
-            <button className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors">
-              Agregar al carrito
-            </button>
-          </div>
+          <button 
+            onClick={handleAgregarAlCarrito}
+            className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors"
+          >
+            Agregar al carrito
+          </button>
+          
+          {cantidadActual > 0 && (
+            <p className="text-sm text-gray-600 mt-2">
+              Ya tienes {cantidadActual} unidad(es) en el carrito
+            </p>
+          )}
         </div>
       </div>
 
