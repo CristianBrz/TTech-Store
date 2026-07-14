@@ -1,7 +1,7 @@
-import Producto from "../components/TarjetaProducto";
 // import useFetch from "../hooks/useFetch";
-import useColecciones from "../hooks/useColecciones";
+import useColecciones from "../hooks/useCollections";
 
+import Producto from "../components/TarjetaProducto";
 import Spinner from "../components/Spinner";
 
 const Productos = () => {

@@ -1,25 +1,25 @@
-import { useParams } from "react-router-dom"
-
-import Spinner from '../components/Spinner';
-import DetalleItem from '../components/DetalleItem';
-// import useFetch from "../hooks/useFetch";
+import { useParams } from "react-router-dom";
 import useDocument from "../hooks/useDocument";
+// import useFetch from "../hooks/useFetch";
+
+import DetalleItem from "../components/DetalleItem";
+import Spinner from "../components/Spinner";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const DetalleProducto = () => {
-  const { id } = useParams()
+  const { id } = useParams();
 
   // const endpointProductos = "/data/productos.json";
 
   // const { items: productos, cargando, error } = useFetch(endpointProductos);
-  // const producto = productos?.find(p => p.id === parseInt(id)) 
   
-  const colleccion = "productos";
-  
-  const { item: producto, cargando, error } = useDocument(colleccion, id);
-  
+  // const producto = productos?.find(p => p.id === parseInt(id))
+
+  const colleccionProductos = "productos";
+
+  const { item: producto, cargando, error } = useDocument(colleccionProductos, id);
 
   if (cargando) {
     return (
@@ -39,7 +39,7 @@ const DetalleProducto = () => {
 
   const volverPaginaAnterior = () => {
     window.history.back();
-  }
+  };
 
   return (
     <section className="bg-gray-50 p-4 min-h-screen rounded-xl my-3">
@@ -47,15 +47,17 @@ const DetalleProducto = () => {
         Detalle del producto
       </h1>
 
-      <button onClick={volverPaginaAnterior} className="bg-gray-600 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-gray-700 transition-colors shadow-md hover:shadow-lg mx-auto w-fit">
+      <button
+        onClick={volverPaginaAnterior}
+        className="bg-gray-600 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-gray-700 transition-colors shadow-md hover:shadow-lg mx-auto w-fit"
+      >
         <FontAwesomeIcon icon={faArrowLeft} />
         <span>Volver</span>
       </button>
 
       <DetalleItem producto={producto} />
-
     </section>
-  )
-}
+  );
+};
 
-export default DetalleProducto
+export default DetalleProducto;

@@ -11,6 +11,7 @@ const Nav = () => {
     { nombre: "Home", path: "/" },
     { nombre: "Productos", path: "/productos" },
     { nombre: "Contacto", path: "/contacto" },
+    { nombre: "Dashboard", path: "/dashboard" },
     { nombre: "Carrito", path: "/carrito", cantidad: cantidadCarrito },
   ];
 

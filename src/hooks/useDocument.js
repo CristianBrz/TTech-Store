@@ -37,7 +37,7 @@ const useDocument = (nombreColeccion, documentoId) => {
           detalle: err.message,
         });
         setCargando(false);
-      }
+      },
     );
 
     return () => desvincular();

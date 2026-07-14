@@ -5,6 +5,9 @@ import DetalleProducto from "./pages/DetalleProducto";
 import Home from "./pages/Home";
 import Carrito from "./pages/Carrito";
 import Contacto from "./pages/Contacto";
+import Dashboard from "./pages/Dashboard";
+import FormularioAgregarProducto from "./components/forms/FormularioAgregarProducto";
+import FormularioEditarProducto from "./components/forms/FormularioEditarProducto";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/producto/:id" element={<DetalleProducto />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/agregar-producto" element={<FormularioAgregarProducto />} />
+          <Route path="/editar-producto/:id" element={<FormularioEditarProducto />} />
         </Route>
       </Routes>
     </>
